@@ -2,6 +2,7 @@
 const express = require('express');
 
 const router = express.Router();
+const packageJson = require('../package.json');
 
 // Documentation router
 router.get('/', (req, res) => {
@@ -40,9 +41,9 @@ router.post('/install/mac', (req, res) => {
 });
 
 router.get('/download', (req, res) => {
-  const { version } = packageJson;
+  const { prototypeKitVersion } = packageJson;
   res.redirect(
-    `https://github.com/nhsuk/nhsuk-prototype-kit/archive/refs/tags/v${version}.zip`,
+    `https://github.com/nhsuk/nhsuk-prototype-kit/archive/refs/tags/v${prototypeKitVersion}.zip`,
   );
 });
 
