@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% set sectionName = "Make a basic prototype" %}
+{# list of URLS, titles and questions for reference - existing NHS templates are hardcoded but these are tokenised for ease of change #}
+
+{% set exampleServiceName = "Order a test to check if you have magical powers" %}
+{% set exampleServiceURL = "magical-powers" %}
+{% set exampleStart = { url: "start-page" }  %}
+{% set exampleRadios = { "url" : "magical-powers", "title" : "Have you felt symptoms of magical powers in the last 30 days?", "legend" : "magical-powers", "summary" : "Symptoms of magical powers" }  %}
+{% set exampleTextArea = { "url" : "details", "title" : "Tell us your symptoms of magical powers", legend: "details", "summary" : "Details of the symptoms" } %}
+{% set exampleCheckAnswers = { url: "check-your-answers", title : "Check your answers" }  %}
+{% set exampleConfirmation = { url: "confirmation-page" } %}
+{% set exampleIneligible = { url: "ineligible" }  %}
+
+{% block pageTitle %}
+ {{ pageTitle | default("Add title with 'pageTitle'")}} - {{sectionName}} - NHS.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "how-tos/includes/breadcrumb.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+{% if not noCaption %}<span class="nhsuk-caption-xl">{{sectionName}}</span>{% endif %}
+      <h1 class="nhsuk-heading-xl">
+        {{ pageTitle | default("Add title with 'pageTitle'")}}
+      </h1>
+
+{% block makePrototype %}
+
+   <p>Add text in makePrototype block </p>
+{% endblock %}
+
+{{ pagination({
+  previousUrl: prev.link if prev ,
+  previousPage: prev.title if prev ,
+  nextUrl: next.link if next ,
+  nextPage: next.title if next
+}) }}
+
+
+         {% include "how-tos/includes/back-button.html" %}
+
+    </div>
+
+  </div>
+{% endblock %}
