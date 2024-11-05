@@ -39,6 +39,15 @@ app.locals.serviceName = config.serviceName;
 // Use cookie middleware to parse cookies
 app.use(cookieParser());
 
+if (process.env.NODE_ENV === 'production') {
+  app.use((req, res, next) => {
+    // Set Strict-Transport-Security header to
+    // ensure that browsers only use HTTPS
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+    next();
+  });
+}
+
 // Nunjucks configuration for application
 const appViews = [
   path.join(__dirname, 'app/views/'),
