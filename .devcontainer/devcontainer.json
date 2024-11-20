@@ -1,0 +1,55 @@
+{
+  "name": "NHS Prototype",
+  "forwardPorts": [2000],
+  "portsAttributes": {
+    "2000": {
+      "label": "NHS Prototype",
+      "onAutoForward": "notify"
+    },
+    "1111": {
+      "label": "NHS Prototype App",
+      "onAutoForward": "ignore"
+    },
+    "3000": {
+      "label": "NHS Prototype BrowserSync",
+      "onAutoForward": "ignore"
+    }
+  },
+  // when created - sets the git merge statergy to rebase to hopefully make easier time of merging
+  "onCreateCommand": "git config --global pull.rebase true",
+  // after creation - installs the node packages
+  "postCreateCommand": "npm install",
+  // after the start command - runs the watch task and pipes the output
+  "postStartCommand": "nohup bash -c 'npm run watch &'",
+  // codespace customisations
+  "customizations": {
+    // Configure properties specific to VS Code web-basde IDE used within codespaces.
+    "vscode": {
+      // editor settings
+      "settings": {
+        "remote.autoForwardPorts": false,
+        // Uncomment the following property object to hide files not needed to update content
+        // "files.exclude": {
+        //   "{docs,lib,linters,middleware,node_modules,public,tests,NHS111.Shared.Frontend}/": true,
+        //   "*{CHANGELOG,CONTRIBUTING}.md": true,
+        //   "app/{data,assets}/": true,
+        //   "app/*.js": true,
+        //   "*.{js,yml,json}": true,
+        //   ".*": true,
+        //   "LICENSE": true
+        // },
+        "emmet.includeLanguages": {
+          "njk": "html",
+          "nunjucks": "html",
+          "erb": "html",
+          "jinja": "html",
+          "jinja-html": "html",
+          "markdown": "html"
+        },
+        "html.suggest.html5": true
+      },
+      // bundle the following editor extensions
+      "extensions": ["douglaszaltron.nunjucks-vscode-extensionpack"]
+    }
+  }
+}
