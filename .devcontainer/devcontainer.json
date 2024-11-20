@@ -1,19 +1,19 @@
 {
   "name": "NHS Prototype",
-  "forwardPorts": [2000],
+  "forwardPorts": [2001],
+  "runArgs": ["--env", "PORT=2001"],
   "portsAttributes": {
-    "2000": {
+    "3001": {
       "label": "NHS Prototype",
       "onAutoForward": "notify"
     },
-    "1111": {
+    "2001": {
       "label": "NHS Prototype App",
       "onAutoForward": "ignore"
-    },
-    "3000": {
-      "label": "NHS Prototype BrowserSync",
-      "onAutoForward": "ignore"
     }
+  },
+  "remoteEnv": {
+    "PORT": "2001"
   },
   // when created - sets the git merge statergy to rebase to hopefully make easier time of merging
   "onCreateCommand": "git config --global pull.rebase true",
