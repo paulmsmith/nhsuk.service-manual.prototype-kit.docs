@@ -1,26 +1,24 @@
 {
   "name": "NHS Prototype",
-  "forwardPorts": [2001],
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  // "waitFor": "onCreateCommand",
   "runArgs": ["--env", "PORT=2001"],
   "portsAttributes": {
     "3001": {
-      "label": "NHS Prototype",
-      "onAutoForward": "notify"
-    },
-    "2001": {
-      "label": "NHS Prototype App",
-      "onAutoForward": "ignore"
+      "label": "Application",
+      "onAutoForward": "openPreview"
     }
   },
-  "remoteEnv": {
-    "PORT": "2001"
-  },
+  "forwardPorts": [3001],
+  "otherPortsAttributes": { "onAutoForward" : "ignore" },
   // when created - sets the git merge statergy to rebase to hopefully make easier time of merging
   "onCreateCommand": "git config --global pull.rebase true",
   // after creation - installs the node packages
   "postCreateCommand": "npm install",
-  // after the start command - runs the watch task and pipes the output
-  "postStartCommand": "nohup bash -c 'npm run watch &'",
+  // A command to run each time a tool has successfully attached to the container
+  "postAttachCommand": {
+    "server": "npm run watch"
+  },
   // codespace customisations
   "customizations": {
     // Configure properties specific to VS Code web-basde IDE used within codespaces.
@@ -31,7 +29,7 @@
         // Uncomment the following property object to hide files not needed to update content
         // "files.exclude": {
         //   "{docs,lib,linters,middleware,node_modules,public,tests,NHS111.Shared.Frontend}/": true,
-        //   "*{CHANGELOG,CONTRIBUTING}.md": true,
+        //   "*{CHANGELOG,CONTRIBUTING}.md": true,a
         //   "app/{data,assets}/": true,
         //   "app/*.js": true,
         //   "*.{js,yml,json}": true,
