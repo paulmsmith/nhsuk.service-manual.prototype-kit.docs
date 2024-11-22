@@ -1,14 +1,16 @@
 {
   "name": "NHS Prototype",
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  // "waitFor": "onCreateCommand",
+  // codespaces seems to have an issue using port 2000 so setting to 2001 for the NHS Prototype Kit
   "runArgs": ["--env", "PORT=2001"],
   "portsAttributes": {
     "3001": {
       "label": "Application",
+      // this opens the preview window to present the running prototype to the user
       "onAutoForward": "openPreview"
     }
   },
+  // forward the port for the browersync process
   "forwardPorts": [3001],
   "otherPortsAttributes": { "onAutoForward" : "ignore" },
   // when created - sets the git merge statergy to rebase to hopefully make easier time of merging
@@ -25,8 +27,7 @@
     "vscode": {
       // editor settings
       "settings": {
-        "remote.autoForwardPorts": false,
-        // Uncomment the following property object to hide files not needed to update content
+        // Uncomment the following object to dev hide focussed files not needed to update content
         // "files.exclude": {
         //   "{docs,lib,linters,middleware,node_modules,public,tests,NHS111.Shared.Frontend}/": true,
         //   "*{CHANGELOG,CONTRIBUTING}.md": true,a
@@ -36,6 +37,7 @@
         //   ".*": true,
         //   "LICENSE": true
         // },
+        // make emmet work within nunjucks
         "emmet.includeLanguages": {
           "njk": "html",
           "nunjucks": "html",
@@ -47,7 +49,10 @@
         "html.suggest.html5": true
       },
       // bundle the following editor extensions
-      "extensions": ["douglaszaltron.nunjucks-vscode-extensionpack"]
+      "extensions": [
+        // nunjuck syntax highlighting
+        "douglaszaltron.nunjucks-vscode-extensionpack"
+      ]
     }
   }
 }
