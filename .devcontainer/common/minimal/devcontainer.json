@@ -1,0 +1,20 @@
+{
+  "extends": "../base/devcontainer.json",
+  "name": "Minimal NHS Prototype Kit configuration",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // using minimatch globbing you can hide files from prototype kit users
+        "files.exclude": {
+          "{docs,lib,linters,middleware,node_modules,public,tests,NHS111.Shared.Frontend}/": true,
+          "*{CHANGELOG,CONTRIBUTING}.md": true,
+          "app/{data,assets}/": true,
+          "app/*.js": true,
+          "*.{js,yml,json}": true,
+          ".*": true,
+          "LICENSE": true
+        }
+      }
+    }
+  }
+}
