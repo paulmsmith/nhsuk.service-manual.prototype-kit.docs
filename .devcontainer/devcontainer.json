@@ -1,4 +1,0 @@
-{
-  "extends": "./common/default/devcontainer.json",
-  "name": "NHS Prototype Kit"
-}
