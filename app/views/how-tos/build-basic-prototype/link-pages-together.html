@@ -1,5 +1,5 @@
 {% set pageTitle = "Link your pages together" %} {% set next = { "title" : "Use
-components from the Design System" , "link" : "use-components" } %} {% set prev
+components from the design system" , "link" : "use-components" } %} {% set prev
 = { "title" : "Create pages" , "link" : "create-pages" } %} {% extends
 'how-tos/build-basic-prototype/_BASE.njk' %} {% block makePrototype %}
 
@@ -12,6 +12,8 @@ components from the Design System" , "link" : "use-components" } %} {% set prev
       user inputs data)
     </li>
   </ul>
+
+
   <h2 id="link-your-start-page-to-question-1">
     Link your start page to question 1
   </h2>
@@ -21,8 +23,8 @@ components from the Design System" , "link" : "use-components" } %} {% set prev
       <code class="language-markup">app/views</code> folder.
     </li>
     <li>
-      Find the <code class="language-markup">&lt;a&gt;</code> tag with 'Start
-      now' inside.
+      Find the <code class="language-markup">&lt;a&gt;</code> tag with "Start
+      now" inside.
     </li>
     <li>
       Change the value of the
@@ -69,11 +71,11 @@ components from the Design System" , "link" : "use-components" } %} {% set prev
     and select <strong>Continue</strong> to check the button works.
   </p>
   <p>
-    This time it's a real HTML button, not a link. Buttons submit form data -
+    This time it's a real HTML button, not a link. Buttons submit form data –
     the URL is on the form tag, not the button.
   </p>
   <h2 id="link-question-2-to-your-{{exampleCheckAnswers.url}}-page">
-    Link question 2 to your 'Check answers' page
+    Link question 2 to your "Check answers" page
   </h2>
   <ol class="nhsuk-list nhsuk-list--number">
     <li>
@@ -127,6 +129,11 @@ components from the Design System" , "link" : "use-components" } %} {% set prev
     >
     and select <strong>Accept and send registration</strong> to check the button works.
   </p>
+
+
+  {{ insetText({
+    HTML: "<p>The back links in your pages do not go to the correct places yet. If you want, you can try and change the links in the back links by using the <a href='https://service-manual.nhs.uk/design-system/components/back-link'>back link component guidance</a>.</p>"
+  }) }}
 
   {% endblock %}
 </div>
