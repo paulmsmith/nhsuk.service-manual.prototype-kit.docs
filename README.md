@@ -18,7 +18,7 @@ We normally use the [NHS content guide](https://service-manual.nhs.uk/content) f
 
 #### command line
 
-Lower case. Only use for Windows instructions. Normally it will be ‘the command line’.
+Lower case. Only use for Windows instructions. Normally it will be 'the command line'.
 
 #### Git, git, Github
 
@@ -54,15 +54,19 @@ For talking to the public about the website (find out more on the [NHS health wr
 
 #### NHS England laptops
 
-Use ‘NHS England Windows laptops’ instructions for people using corporate laptops.
+Use 'NHS England Windows laptops' instructions for people using corporate laptops.
 
 #### NHS prototype kit
 
-‘NHS’ is in caps and ‘prototype kit’ in lower case (except where it is shown next to the NHS logo when it is capitalised as ‘NHS Prototype kit’). Write out in full the first time it is used on a page, then call ’the kit’. Try to avoid ‘prototype kit’.
+'NHS' is in caps and 'prototype kit' in lower case (except where it is shown next to the NHS logo when it is capitalised as 'NHS Prototype kit'). Write out in full the first time it is used on a page, then call 'the kit'. Try to avoid 'prototype kit'.
+
+#### quotation marks
+
+Use straight quotes only (not smart or curly quotes). More detail is in the <a href="https://service-manual.nhs.uk/content/formatting-and-punctuation#quotation-marks">Formatting and punctuation</a> part of the Digital service manual content guide.
 
 #### terminal
 
-Lower case. Usually it will be ‘the terminal’.
+Lower case. Usually it will be 'the terminal'.
 
 #### Visual Studio Code
 
