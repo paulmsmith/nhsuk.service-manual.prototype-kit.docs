@@ -4,8 +4,13 @@
   // codespaces seems to have an issue using port 2000 so setting to 2001 for the NHS Prototype Kit
   "runArgs": ["--env", "PORT=2001"],
   "portsAttributes": {
+    "2001": {
+      "label": "Prototype App",
+      "visibility": "public",
+      "onAutoForward": "silent"
+    },
     "3001": {
-      "label": "Running prototype",
+      "label": "BrowserSync",
       // --------------------------------
       // onAutoForward possible options
       // --------------------------------
@@ -14,11 +19,12 @@
       // 'silent' (does nothing)
       // 'openBrowser' (opens the prototype URL in a browser window/tab)
       // 'openPrview' (opens the codespaces preview window to present the running prototype to the user)
-      "onAutoForward": "openPreview" 
+      "visibility": "public",
+      "onAutoForward": "openPreview"
     }
   },
   // forward the port for the browersync process
-  "forwardPorts": [3001],
+  "forwardPorts": [2001,3001],
   "otherPortsAttributes": { "onAutoForward": "ignore" },
   // when created - sets the git merge statergy to rebase to hopefully make easier time of merging
   "onCreateCommand": "git config --global pull.rebase true",
